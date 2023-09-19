@@ -2,7 +2,7 @@
 
 Hello there.
 This is just a library of codesamples i created during my batchelors degree for later use and access.
-If you somehow find it usefull remember to check the requirements before use in the (MIT Licence)[https://github.com/marols27/CS_Lib/blob/main/LICENSE].
+If you somehow find it usefull remember to check the requirements before use in the [MIT Licence](https://github.com/marols27/CS_Lib/blob/main/LICENSE).
 
 ###### WARNING: 
 
