@@ -2,7 +2,7 @@ using System;
 
 namespace Shapes
 {
-    internal class RightTriangle : Shape
+    internal class RightTriangle : IShape
     {
         private double width;
         private double height;
@@ -13,22 +13,22 @@ namespace Shapes
             Height = height;
         }
 
-        public double Width
+        public RightTriangle()
         {
-            get => width; set
+        }
+
+        public double Width { get => width; set
             {
                 if (value < 0)
-                    width = 10; // Set to 10 because of task requirement.
+                    width = 10; // Set to 10 because of task requirements.
                 else
                     width = value;
             }
         }
-        public double Height
-        {
-            get => height; set
+        public double Height { get => height; set
             {
                 if (value < 0)
-                    height = 10; // Set to 10 because of task requirement.
+                    height = 10; // Set to 10 because of task requirements.
                 else
                     height = value;
             }
@@ -51,7 +51,7 @@ namespace Shapes
 
         public override string ToString()
         {
-            string s = "";
+            string s = "Right Triangle:";
             s += "Width: " + Width + ", ";
             s += "Height: " + Height + ", ";
             s += "Area: " + GetArea() + ", ";
@@ -60,7 +60,7 @@ namespace Shapes
             return s;
         }
 
-        public string ToString(string opt)
+        public string CustomizableToString(string opt)
         {
             opt = opt.ToLower();
             string s = "";

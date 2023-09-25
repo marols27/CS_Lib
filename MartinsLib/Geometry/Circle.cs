@@ -2,7 +2,7 @@ using System;
 
 namespace Shapes
 {
-    internal class Circle : Shape
+    internal class Circle : IShape
     {
         private double radius;
 
@@ -11,12 +11,14 @@ namespace Shapes
             Radius = radius;
         }
 
-        public double Radius
+        public Circle()
         {
-            get => radius; set
+        }
+
+        public double Radius { get => radius; set
             {
                 if (value < 0)
-                    radius = 10; // Set to 10 because of task requirement.
+                    radius = 10; // Set to 10 because of task requirements.
                 else
                     radius = value;
             }
@@ -39,14 +41,14 @@ namespace Shapes
 
         public override string ToString()
         {
-            string s = "";
+            string s = "Circle: ";
             s += "Radius: " + Radius + ", ";
-            s += "Diameter: " + GetDiameter() + ", ";
+            s += "Diameter: " + GetDiameter () + ", ";
             s += "Area: " + GetArea() + ", ";
-            s += "Circumference: " + GetCircumference() + ", ";
+            s += "Circumference: " + GetCircumference();
             return s;
         }
-        public string ToString(string opt)
+        public string CustomizableToString(string opt)
         {
             opt = opt.ToLower();
             string s = "";

@@ -2,7 +2,7 @@ using System;
 
 namespace Shapes
 {
-    internal class Rectangle : Shape
+    internal class Rectangle : IShape
     {
         private double width;
         private double height;
@@ -13,23 +13,25 @@ namespace Shapes
             Height = height;
         }
 
+        public Rectangle()
+        {
+        }
+
         public double Width
         {
             get => width; set
             {
                 if (value < 0)
-                    width = 10; // Set to 10 because of task requirement.
+                    width = 10; // Set to 10 because of task requirements.
                 else
                     width = value;
             }
         }
 
-        public double Height
-        {
-            get => height; set
+        public double Height { get => height; set
             {
                 if (value < 0)
-                    height = 10; // Set to 10 because of task requirement.
+                    height = 10; // Set to 10 because of task requirements.
                 else
                     height = value;
             }
@@ -47,15 +49,15 @@ namespace Shapes
 
         public override string ToString()
         {
-            string s = "";
+            string s = "Rectangle: ";
             s += "Width: " + Width + ", ";
             s += "Height: " + Height + ", ";
             s += "Area: " + GetArea() + ", ";
-            s += "Circumference: " + GetCircumference() + ", ";
+            s += "Circumference: " + GetCircumference();
             return s;
         }
 
-        public string ToString(string opt)
+        public string CustomizableToString(string opt)
         {
             opt = opt.ToLower();
             string s = "";

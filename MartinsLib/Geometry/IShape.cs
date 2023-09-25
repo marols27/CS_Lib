@@ -2,7 +2,7 @@ using System;
 
 namespace Shapes
 {
-    interface Shape
+    interface IShape
     {
         double GetArea();
         double GetCircumference();
